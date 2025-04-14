@@ -1,0 +1,84 @@
+{
+  "mcpServer": {
+    "command": "python", 
+    "args": [
+      "C:/Users/karun/Documents/MCP Demo/mcp_server.py"
+    ], 
+    "env_vars": {},
+    "timeout": 10,
+    "tools": [
+      {
+        "name": "read_file",
+        "description": "Read content from a specified file path.",
+        "parameters": {
+          "filepath": {
+            "type": "string",
+            "description": "Path to the file to read"
+          }
+        }
+      },
+      {
+        "name": "write_file",
+        "description": "Write content to a specified file path.",
+        "parameters": {
+          "filepath": {
+            "type": "string",
+            "description": "Path to the file to write"
+          },
+          "content": {
+            "type": "string",
+            "description": "Content to write to the file"
+          }
+        }
+      },
+      {
+        "name": "calculate",
+        "description": "Perform basic arithmetic operations.",
+        "parameters": {
+          "operation": {
+            "type": "string",
+            "description": "Operation to perform (add, subtract, multiply, divide)",
+            "enum": ["add", "subtract", "multiply", "divide"]
+          },
+          "a": {
+            "type": "number",
+            "description": "First operand"
+          },
+          "b": {
+            "type": "number",
+            "description": "Second operand"
+          }
+        }
+      },
+      {
+        "name": "get_webpage_title",
+        "description": "Fetch the title of a webpage from a given URL.",
+        "parameters": {
+          "url": {
+            "type": "string",
+            "description": "URL of the webpage"
+          }
+        }
+      }
+    ],
+    "resources": [
+      {
+        "name": "list_directory",
+        "description": "List files in a specified directory.",
+        "parameters": {
+          "path": {
+            "type": "string",
+            "description": "Path to the directory to list"
+          }
+        }
+      }
+    ],
+    "prompts": [
+      {
+        "name": "summarize_file_prompt",
+        "description": "Provide a prompt template for summarizing file content.",
+        "parameters": {}
+      }
+    ]
+  }
+}
